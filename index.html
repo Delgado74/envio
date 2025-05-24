@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Envíos Relámpagos</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans text-gray-800">
+  <!-- Header con logo horizontal integrado -->
+  <header class="bg-[#0b1d33] text-white py-6">
+    <div class="container mx-auto px-4 flex justify-center">
+      <img src="./img/logo.png" alt="Envíos Relámpagos Logo" class="h-32 md:h-80">
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-6">
+    <section class="bg-white rounded-lg shadow-lg p-6 mb-6">
+      <h2 class="text-xl md:text-2xl font-semibold mb-4">¿Enviar dinero a tu familia de forma rápida, barata y privada?</h2>
+      <p class="text-base md:text-lg mb-4">¡Ahora es posible! Con nuestro servicio:</p>
+      <ul class="list-disc pl-6 mb-4 text-sm md:text-base">
+        <li>Depositas en <strong>Bitcoin Lightning</strong> (velocidad y costos mínimos).</li>
+        <li>Tu familia recibe al instante en <strong>MLC o CUP</strong> sin complicaciones.</li>
+      </ul>
+    </section>
+
+    <section class="bg-white rounded-lg shadow-lg p-6 mb-6">
+      <h2 class="text-xl md:text-2xl font-semibold mb-4">Beneficios</h2>
+      <ul class="space-y-2 text-sm md:text-base">
+        <li>✅ Transacciones en minutos, sin esperas.</li>
+        <li>✅ Comisiones ultra bajas, ideal para envíos frecuentes.</li>
+        <li>✅ Máxima privacidad.</li>
+      </ul>
+      <p class="mt-4 text-base md:text-lg font-medium">¡Financia el futuro de los tuyos con la seguridad de blockchain y la facilidad local! 💸🌍</p>
+      <p class="text-base md:text-lg font-semibold">Rapidez sin límites, costos que no pesan, privacidad intacta.</p>
+    </section>
+
+    <section class="bg-white rounded-lg shadow-lg p-6 mb-6">
+      <h2 class="text-xl md:text-2xl font-semibold mb-4">Tarifas ⚡</h2>
+      <p class="text-sm md:text-base">Consulta las tasas de cambio actualizadas en <a href="https://eltoque.com/tasas-de-cambio-de-moneda-en-cuba-hoy#informal-diaria-1" class="text-blue-600 underline" target="_blank">El Toque</a>.</p>
+    </section>
+
+    <section class="bg-white rounded-lg shadow-lg p-6 mb-6">
+      <h2 class="text-xl md:text-2xl font-semibold mb-4">Aplicaciones para comprar Bitcoin Lightning</h2>
+      <p class="text-sm md:text-base"><strong>EUA:</strong> <a href="https://play.google.com/store/apps/details?id=zapsolutions.strike" class="text-blue-600 underline" target="_blank">STRIKE</a></p>
+      <p class="text-sm md:text-base"><strong>Europa:</strong> <a href="https://relai.app/" class="text-blue-600 underline" target="_blank">RELAI</a></p>
+    </section>
+
+    <section class="text-center mb-8">
+      <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Realiza tu envío ahora</h2>
+      
+      <!-- Advertencia visible -->
+      <div class="bg-red-100 border-l-4 border-red-500 p-4 mb-6 max-w-md mx-auto text-left text-sm md:text-base text-red-800">
+        <p class="font-bold">⚠️ ¡Importante!</p>
+        <p class="mt-2">Al realizar el pago con tu billetera Lightning, debes incluir en la <strong>nota de la transacción</strong>:</p>
+        <ul class="list-disc pl-6 mt-2">
+          <li>Número de tarjeta magnética del beneficiario.</li>
+          <li>Número de teléfono del beneficiario.</li>
+          <li>Tu correo electrónico.</li>
+        </ul>
+      </div>
+
+      <!-- Botones con modal -->
+      <div class="flex flex-col space-y-4 max-w-md mx-auto">
+        <button onclick="openModal('https://lnbits.cubabitcoin.org/tpos/nd6AWWXszD5nrbTD5s2MBN')" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition text-base md:text-lg w-full">
+          Enviar MLC
+        </button>
+        <button onclick="openModal('https://lnbits.cubabitcoin.org/tpos/dzhk4qRRqnFWPWZCw5y9xq')" class="bg-green-600 text-white px-6 py-3 rounded-lg hover:bg-green-700 transition text-base md:text-lg w-full">
+          Enviar CUP
+        </button>
+      </div>
+    </section>
+
+    <section class="bg-white rounded-lg shadow-lg p-6">
+      <h2 class="text-xl md:text-2xl font-semibold mb-4">Contacto</h2>
+      <p class="text-sm md:text-base">Para cualquier consulta del servicio, contáctanos en:</p>
+      <p><a href="mailto:enviorelampago21@gmail.com" class="text-blue-600 underline">enviorelampago21@gmail.com</a></p>
+    </section>
+  </main>
+
+  <footer class="bg-[#0b1d33] text-white py-4">
+    <div class="container mx-auto px-4 text-center">
+      <p class="text-sm md:text-base">© 2025 Envíos Relámpagos. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="warningModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white rounded-lg p-6 max-w-lg w-full shadow-lg">
+      <h3 class="text-xl font-bold text-red-600 mb-4">⚠️ Datos obligatorios en la nota del pago</h3>
+      <p class="text-gray-800 mb-2">Antes de continuar, asegúrate de incluir en la <strong>nota de tu billetera</strong> los siguientes datos:</p>
+      <ul class="list-disc pl-6 text-sm text-gray-700 mb-4">
+        <li>Número de tarjeta magnética del beneficiario.</li>
+        <li>Número de teléfono del beneficiario.</li>
+        <li>Tu correo electrónico.</li>
+      </ul>
+      <div class="flex justify-end">
+        <button onclick="closeModal()" class="text-gray-600 px-4 py-2 mr-2">Cancelar</button>
+        <button id="continueBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Continuar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script para controlar el modal -->
+  <script>
+    let redirectUrl = "";
+
+    function openModal(url) {
+      redirectUrl = url;
+      document.getElementById("warningModal").classList.remove("hidden");
+    }
+
+    function closeModal() {
+      document.getElementById("warningModal").classList.add("hidden");
+    }
+
+    document.getElementById("continueBtn").addEventListener("click", function () {
+      window.location.href = redirectUrl;
+    });
+  </script>
+</body>
+</html>

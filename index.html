@@ -31,7 +31,7 @@
         <li>✅ Comisiones ultra bajas, ideal para envíos frecuentes.</li>
         <li>✅ Máxima privacidad.</li>
       </ul>
-      <p class="mt-4 text-base md:text-lg font-medium">¡Financia el futuro de los tuyos con la seguridad de blockchain y la facilidad local! 💸🌍</p>
+      <p class="mt-4 text-base md:text-lg font-medium">¡Financia el futuro de los tuyos con la seguridad de blockchain y la facilidad local!</p>
       <p class="text-base md:text-lg font-semibold">Rapidez sin límites, costos que no pesan, privacidad intacta.</p>
     </section>
 
@@ -48,8 +48,7 @@
 
     <section class="text-center mb-8">
       <h2 class="text-2xl md:text-3xl font-bold mb-6 text-gray-800">Realiza tu envío ahora</h2>
-      
-      <!-- Advertencia visible -->
+
       <div class="bg-red-100 border-l-4 border-red-500 p-4 mb-6 max-w-md mx-auto text-left text-sm md:text-base text-red-800">
         <p class="font-bold">⚠️ ¡Importante!</p>
         <p class="mt-2">Al realizar el pago con tu billetera Lightning, debes incluir en la <strong>nota de la transacción</strong>:</p>
@@ -60,7 +59,6 @@
         </ul>
       </div>
 
-      <!-- Botones con modal -->
       <div class="flex flex-col space-y-4 max-w-md mx-auto">
         <button onclick="openModal('https://lnbits.cubabitcoin.org/tpos/nd6AWWXszD5nrbTD5s2MBN')" class="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition text-base md:text-lg w-full">
           Enviar MLC
@@ -84,11 +82,15 @@
     </div>
   </footer>
 
+  <!-- Iframe para pantalla completa -->
+  <iframe id="paymentFrame" class="fixed inset-0 w-full h-full z-50" style="display: none; border: none;"></iframe>
+  <button onclick="closeIframe()" id="closeIframeBtn" class="hidden fixed top-4 right-4 z-50 bg-white text-black px-3 py-1 rounded shadow-lg">Cerrar</button>
+
   <!-- Modal -->
   <div id="warningModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
     <div class="bg-white rounded-lg p-6 max-w-lg w-full shadow-lg">
       <h3 class="text-xl font-bold text-red-600 mb-4">⚠️ Datos obligatorios en la nota del pago</h3>
-      <p class="text-gray-800 mb-2">Antes de continuar, asegúrate usar una billetera LIGHTNING que permita NOTA o MEMO y de incluir en la <strong>nota de tu billetera</strong> los siguientes datos:</p>
+      <p class="text-gray-800 mb-2">Antes de continuar, asegúrate de usar una billetera LIGHTNING que permita NOTA o MEMO y de incluir en la <strong>nota de tu billetera</strong> los siguientes datos:</p>
       <ul class="list-disc pl-6 text-sm text-gray-700 mb-4">
         <li>Número de tarjeta magnética del beneficiario.</li>
         <li>Número de teléfono del beneficiario.</li>
@@ -101,7 +103,6 @@
     </div>
   </div>
 
-  <!-- Script para controlar el modal -->
   <script>
     let redirectUrl = "";
 
@@ -114,8 +115,19 @@
       document.getElementById("warningModal").classList.add("hidden");
     }
 
+    function closeIframe() {
+      const frame = document.getElementById("paymentFrame");
+      frame.style.display = "none";
+      frame.src = "";
+      document.getElementById("closeIframeBtn").classList.add("hidden");
+    }
+
     document.getElementById("continueBtn").addEventListener("click", function () {
-      window.location.href = redirectUrl;
+      closeModal();
+      const frame = document.getElementById("paymentFrame");
+      frame.src = redirectUrl;
+      frame.style.display = "block";
+      document.getElementById("closeIframeBtn").classList.remove("hidden");
     });
   </script>
 </body>

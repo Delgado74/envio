@@ -46,11 +46,7 @@
 
       <div class="bg-red-100 border-l-4 border-red-500 p-4 mb-6 max-w-md mx-auto text-left text-sm md:text-base text-red-800">
         <p class="font-bold">⚠️ ¡Importante!</p>
-        <p class="mt-2">Al realizar el pago con tu billetera Lightning, debes incluir en la <strong>nota de la transacción</strong>:</p>
         <ul class="list-disc pl-6 mt-2">
-          <li>Número de tarjeta magnética del beneficiario.</li>
-          <li>Número de teléfono del beneficiario.</li>
-          <li>Tu correo electrónico.</li>
           <li><strong>SI ELIGES MLC PAGAMOS UN  15% ADICIONAL.</strong></li>
         </ul>
       </div>
@@ -83,22 +79,7 @@
   <button onclick="closeIframe()" id="closeIframeBtn" class="hidden fixed top-4 right-4 z-50 bg-white text-black px-3 py-1 rounded shadow-lg">Cerrar</button>
 
   <!-- Modal -->
-  <div id="warningModal" class="hidden fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-    <div class="bg-white rounded-lg p-6 max-w-lg w-full shadow-lg">
-      <h3 class="text-xl font-bold text-red-600 mb-4">⚠️ Datos obligatorios en la nota del pago</h3>
-      <p class="text-gray-800 mb-2">Antes de continuar, asegúrate de usar una billetera LIGHTNING que permita NOTA o MEMO y de incluir en la <strong>nota de tu billetera</strong> los siguientes datos:</p>
-      <ul class="list-disc pl-6 text-sm text-gray-700 mb-4">
-        <li>Número de tarjeta magnética del beneficiario.</li>
-        <li>Número de teléfono del beneficiario.</li>
-        <li>Tu correo electrónico.</li>
-      </ul>
-      <div class="flex justify-end">
-        <button onclick="closeModal()" class="text-gray-600 px-4 py-2 mr-2">Cancelar</button>
-        <button id="continueBtn" class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Continuar</button>
-      </div>
-    </div>
-  </div>
-
+ 
   <script>
     let redirectUrl = "";
 

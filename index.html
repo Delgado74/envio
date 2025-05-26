@@ -73,39 +73,5 @@
       <p class="text-sm md:text-base">© 2025 Envíos Relámpagos. Todos los derechos reservados.</p>
     </div>
   </footer>
-
-  <!-- Iframe para pantalla completa -->
-  <iframe id="paymentFrame" class="fixed inset-0 w-full h-full z-50" style="display: none; border: none;"></iframe>
-  <button onclick="closeIframe()" id="closeIframeBtn" class="hidden fixed top-4 right-4 z-50 bg-white text-black px-3 py-1 rounded shadow-lg">Cerrar</button>
-
-  <!-- Modal -->
- 
-  <script>
-    let redirectUrl = "";
-
-    function openModal(url) {
-      redirectUrl = url;
-      document.getElementById("warningModal").classList.remove("hidden");
-    }
-
-    function closeModal() {
-      document.getElementById("warningModal").classList.add("hidden");
-    }
-
-    function closeIframe() {
-      const frame = document.getElementById("paymentFrame");
-      frame.style.display = "none";
-      frame.src = "";
-      document.getElementById("closeIframeBtn").classList.add("hidden");
-    }
-
-    document.getElementById("continueBtn").addEventListener("click", function () {
-      closeModal();
-      const frame = document.getElementById("paymentFrame");
-      frame.src = redirectUrl;
-      frame.style.display = "block";
-      document.getElementById("closeIframeBtn").classList.remove("hidden");
-    });
-  </script>
 </body>
 </html>

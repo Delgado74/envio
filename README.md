@@ -16,5 +16,6 @@
 ✅ **Velocidad**: Transacciones completadas en minutos, sin largas esperas.  
 ✅ **Ahorro**: Comisiones ultra bajas, perfectas para envíos frecuentes.  
 ✅ **Privacidad**: Máxima confidencialidad en todas tus operaciones.
+✅ **Comisión**: Solo el 1.5%, competitivo con otras soluciones.
 
 ¡Envía dinero a tus seres queridos con la rapidez y seguridad que merecen!
